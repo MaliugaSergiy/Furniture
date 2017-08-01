@@ -1,171 +1,13 @@
-
-
-
-
-section.navPanel {
-	.wr {
-		padding: 0;
-		max-width: 1200px;
-		position: relative;
-	}
-	background: $main_red;
-	nav {
-		overflow: hidden;
-		font-size: 16px;
-	}
-	nav ul {
-		margin: 0 0 2em;
-	}
-	nav ul li {
-		float: left;
-	}
-	nav ul li a,
-	nav ul li span {
-		display: block;
-		background: $main_red;
-		color: $main_white;
-		text-decoration: none;
-		padding: 10px;
-		cursor: pointer;
-		-webkit-transition-duration: .3s;
-		transition-duration: .3s;
-	}
-	nav ul li a:hover,
-	nav ul li span:hover {
-		background: $main_red_hover;
-	}
-	nav ul li.more {
-		width: auto;
-		text-align: center;
-		display: none;
-	}
-	nav ul li.more:hover ul#overflow,nav ul li.more:hover ul#overflow2
-	{
-		opacity: 1;
-		visibility: visible;
-		height: auto;
-		width: 100%;
-		//border: 1px solid #000;
-		border-top: 3px solid $main_dark;
-		left: 50%;
-		transform: translateX(-50%);
-		
-	}
-	nav #overflow, nav #overflow2 {
-		height: 0;
-		opacity: 0;
-		visibility: hidden;
-		position: absolute;
-		justify-content: flex-start;
-		text-align: left;
-		flex-wrap: wrap;
-		-webkit-transition-duration: .3s;
-		transition-duration: .3s;
-		right: 0;
-		background: $main_red_hover;
-	}
-	nav #overflow li,nav #overflow2 li
-	{
-		float: none;
-	}
-	nav #overflow li a, nav #overflow2 li a {
-		background: $main_gold;
-		white-space: nowrap;
-	}
-	nav #overflow li a:hover, nav #overflow2 li a:hover {
-		background: $main_red_hover;
-	}
-	//make submenu
-	#nav .itemMenu, #nav2 .itemMenu {
-		&>a {
-			text-transform: uppercase;
-			font-size: 18px;
-		}
-		//position: relative;
-		.submenu {
-			height: 0;
-			opacity: 0;
-			visibility: hidden;
-			position: absolute;
-			text-align: left;
-			transition-duration: .3s;
-			display: flex;
-			flex-direction: column;
-			min-width: 150px;
-			width: auto;
-			li {
-				a {
-					background-color: $main_gold;
-					color: $main_black;
-					&:hover {
-						background-color: $main_red;
-						color: $main_white;
-					}
-				}
-			}
-		}
-		&:hover .submenu {
-			opacity: 1;
-			visibility: visible;
-			height: auto;
-			border-top: 3px solid $main_dark;
-		}
-	}
-	//make more-menu
-	nav ul li.more {
-		span {
-			text-transform: uppercase;
-			font-size: 18px;
-		}
-		i {
-			font-size: 14px;
-		}
-		ul#overflow, ul#overflow2 {
-			display: none;
-			border-top: 0px solid $main_dark;
-			background: $main_gold;
-			text-align: center;
-			transition: 0.3s;
-			li.itemMenu {
-				flex-basis: 250px;
-				min-width: 230px;
-				flex: 1;
-				a {
-					&:hover {
-						background-color: $main_red;
-					}
-				}
-				ul.submenu {
-					position: static;
-					opacity: 1;
-					visibility: visible;
-					height: auto;
-					width: 100%;
-					text-align: center;
-					li {
-						a {
-							align-items: center;
-							padding: 0;
-						}
-					}
-				}
-				&:hover .submenu {
-					border-top: none;
-				}
-			}
-		}
-		&:hover ul#overflow, &:hover ul#overflow2 {
-			display: flex;
-		}
-	}
-}
-
 section.header {
 	.wr {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		padding: 20px 10px;
+		.burger {
+			display: none;
+			font-size: 24px;
+		}
 		.calll {
 			flex: 1;
 		}
@@ -177,7 +19,6 @@ section.header {
 		}
 		.d2 {
 			background: $main_white;
-
 			form {
 				position: relative;
 			}
@@ -225,13 +66,13 @@ section.header {
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
+			text-align: center;
+			font-size: 20px;
 			& a:first-child {
 				font-weight: bold;
-				font-size: 20px;
 			}
 			& a:last-child {
 				font-weight: bold;
-				font-size: 20px;
 				padding: 0 3px;
 				background-image: linear-gradient(to right, $main_gold 80%, rgba(255, 255, 255, 0) 0%);
 				background-position: bottom;
@@ -239,7 +80,150 @@ section.header {
 				background-repeat: repeat-x;
 				text-transform: lowercase;
 				font-weight: 400;
+				span:last-child {
+					display: none;
+				}
 				&:hover {}
+			}
+		}
+	}
+}
+
+@media (max-width: 950px) {
+	section.header {
+		.wr {
+			.calll {}
+			.logo {}
+			.d2 {
+				order: 1;
+				flex: 0.2;
+				form {}
+				input,
+				button {}
+				input {
+					width: 42px;
+					padding-left: 1px;
+					border: 1px solid transparent;
+					transition: border-color 0.2s, width 0.2s;
+				}
+				button {}
+				button:before {}
+				&:hover input,
+				input:focus {
+					border: 1px solid $main_gold;
+					width: 250px;
+					padding-left: 5px;
+					background-color: rgba(255, 255, 255, 0.97);
+				}
+			}
+			.call_us {
+				& a:first-child {}
+				& a:last-child {
+					&:hover {}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 690px) {
+	section.header {
+		.wr {
+			padding: 10px;
+			.calll {}
+			.logo {
+				width: 149px;
+				height: 56px;
+				background-size: 149px 56px;
+			}
+			.d2 {
+				margin-left: 20px;
+				form {}
+				input,
+				button {}
+				input {}
+				button {}
+				button:before {}
+				&:hover input,
+				input:focus {}
+			}
+			.call_us {
+				flex: 1.2;
+				font-size: 16px;
+				& a:first-child {}
+				& a:last-child {
+					&:hover {}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 550px) {
+	section.header {
+		.wr {
+			.calll {}
+			.logo {}
+			.d2 {
+				display: none;
+				form {}
+				input,
+				button {}
+				input {}
+				button {}
+				button:before {}
+				&:hover input,
+				input:focus {}
+			}
+			.call_us {
+				flex-direction: row;
+				& a span {
+					display: none;
+				}
+				& a:first-child {
+					font-size: 24px;
+				}
+				& a:last-child {
+					font-size: 18px;
+					background-image: none;
+					span:last-child {
+						display: block;
+						text-transform: uppercase;
+						margin-left: 10px;
+						font-weight: bold;
+					}
+					&:hover {}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 450px) {
+	section.header {
+		.wr {
+			padding: 5px;
+			.calll {}
+			.logo {
+				width: 112px;
+				height: 42px;
+				background-size: 112px 42px;
+			}
+			.d2 {
+				form {}
+				input,
+				button {}
+				input {}
+				button {}
+				button:before {}
+				&:hover input,
+				input:focus {}
+			}
+			.call_us {
+				& a:first-child {}
+				& a:last-child {
+					&:hover {}
+				}
 			}
 		}
 	}
@@ -256,7 +240,6 @@ section.header {
 	.wr {
 		background-color: $main_dark;
 		nav {
-			
 			ul#nav2 {
 				li.itemMenu {
 					a {
@@ -277,10 +260,8 @@ section.header {
 					}
 				}
 				li.more {
-
 					& span {
 						background-color: $main_dark;
-						
 					}
 					#overflow2 {
 						flex-direction: column;
@@ -289,5 +270,187 @@ section.header {
 				}
 			}
 		}
+	}
+}
+
+section.navPanel {
+	height: 45px;
+
+	.wr {
+		padding: 0;
+		max-width: 1200px;
+		position: relative;
+	}
+	background: $main_red;
+	nav {
+		overflow: hidden;
+		font-size: 16px;
+	}
+	nav ul {
+		margin: 0 0 2em;
+	}
+	nav ul li {
+		float: left;
+	}
+	nav ul li a,
+	nav ul li span {
+		display: block;
+		background: $main_red;
+		color: $main_white;
+		text-decoration: none;
+		padding: 10px;
+		cursor: pointer;
+		-webkit-transition-duration: .3s;
+		transition-duration: .3s;
+	}
+	nav ul li a:hover,
+	nav ul li span:hover {
+		background: $main_red_hover;
+	}
+	nav ul li.more {
+		width: auto;
+		text-align: center;
+		display: none;
+	}
+	nav ul li.more:hover ul#overflow,
+	nav ul li.more:hover ul#overflow2 {
+		opacity: 1;
+		visibility: visible;
+		height: auto;
+		width: 100%;
+		//border: 1px solid #000;
+		border-top: 3px solid $main_dark;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	nav #overflow,
+	nav #overflow2 {
+		height: 0;
+		opacity: 0;
+		visibility: hidden;
+		position: absolute;
+		justify-content: flex-start;
+		text-align: left;
+		flex-wrap: wrap;
+		-webkit-transition-duration: .3s;
+		transition-duration: .3s;
+		right: 0;
+		background: $main_red_hover;
+	}
+	nav #overflow li,
+	nav #overflow2 li {
+		float: none;
+	}
+	nav #overflow li a,
+	nav #overflow2 li a {
+		background: $main_gold;
+		white-space: nowrap;
+	}
+	nav #overflow li a:hover,
+	nav #overflow2 li a:hover {
+		background: $main_red_hover;
+	}
+	//make submenu
+	#nav .itemMenu,
+	#nav2 .itemMenu {
+		&>a {
+			text-transform: uppercase;
+			font-size: 18px;
+		}
+		//position: relative;
+		.submenu {
+			height: 0;
+			opacity: 0;
+			visibility: hidden;
+			position: absolute;
+			text-align: left;
+			transition-duration: .3s;
+			display: flex;
+			flex-direction: column;
+			min-width: 150px;
+			width: auto;
+			li {
+				a {
+					background-color: $main_gold;
+					color: $main_black;
+					&:hover {
+						background-color: $main_red;
+						color: $main_white;
+					}
+				}
+			}
+		}
+		&:hover .submenu {
+			opacity: 1;
+			visibility: visible;
+			height: auto;
+			border-top: 3px solid $main_dark;
+		}
+	}
+	//make more-menu
+	nav ul li.more {
+		span {
+			text-transform: uppercase;
+			font-size: 18px;
+		}
+		i {
+			font-size: 14px;
+		}
+		ul#overflow,
+		ul#overflow2 {
+			display: none;
+			border-top: 0px solid $main_dark;
+			background: $main_gold;
+			text-align: center;
+			transition: 0.3s;
+			li.itemMenu {
+				flex-basis: 250px;
+				min-width: 230px;
+				flex: 1;
+				a {
+					&:hover {
+						background-color: $main_red;
+					}
+				}
+				ul.submenu {
+					position: static;
+					opacity: 1;
+					visibility: visible;
+					height: auto;
+					width: 100%;
+					text-align: center;
+					li {
+						a {
+							align-items: center;
+							padding: 0;
+						}
+					}
+				}
+				&:hover .submenu {
+					border-top: none;
+				}
+			}
+		}
+		&:hover ul#overflow,
+		&:hover ul#overflow2 {
+			display: flex;
+		}
+	}
+}
+
+// style for switch to mobile 
+@media (max-width: 740px) {
+	section.header {
+		.wr {
+
+			.burger {
+				display: block;
+				flex: 0;
+				margin-right: 10px;
+			}
+		}
+	}
+	section.navPanel, #aboveHeader {
+		display: none;
 	}
 }
