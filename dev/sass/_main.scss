@@ -243,6 +243,7 @@ section.header {
 	background-color: $main_dark;
 	position: relative;
 	z-index: 9;
+
 	.wr {
 		background-color: $main_dark;
 		nav {
@@ -290,16 +291,16 @@ section.header {
 			z-index: 10000000;
 			li {
 				padding: 0;
-				a{
+				a {
 					padding: 5px 0;
 				}
 			}
 		}
-
 	}
 }
 
 section.navPanel {
+
 	.wr {
 		padding: 0;
 		max-width: 1200px;
@@ -705,20 +706,7 @@ section.aboutUs {
 			position: relative;
 			display: block;
 			span {
-				position: relative;
-				&:after {
-					content: "";
-					width: 115%;
-					height: 8px;
-					display: block;
-					position: absolute;
-					background-image: url(../icons/figure.png);
-					background-repeat: no-repeat;
-					left: 50%;
-					bottom: -13px;
-					transform: translateX(-50%);
-					background-size: contain;
-				}
+
 			}
 		}
 	}
@@ -854,7 +842,196 @@ section.aboutUs {
 		.vt_logo {}
 	}
 }
+/* -----------------PAGE - card.html------------------- */
+section.slider_card {
+	.slider-for {
+		.img_item {
+			margin: 0 20px;
+			//width: 580px;
+			height: 550px;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+			border: 2px solid $main_gold;
+			cursor: pointer;
+		}
+		.slick-slide {
+			transition: 0.3s ease-in;
+		}
+		.slick-slide:not(.slick-center) {
+			opacity: 0.7;
+			transform: scale(0.9);
+		}
+	}
+	.slider-nav {
+		padding: 0 20px;
+		margin-top: 30px;
+		margin-bottom: 30px;
+		.img_item {
+			border: 2px solid $main_gold;
+			margin: 0 10px;
+			width: 165px;
+			height: 160px;
+			background-repeat: no-repeat;
+			background-size: cover;
+			cursor: pointer;
+		}
+		.slick-slide {
+			transition: 0.3s ease-in;
+		}
+		.slick-slide.slick-center {
+			border: 2px solid $main_red;
+			transform: scale(1);
+		}
+		.slick-slide:not(.slick-center) {
+			transform: scale(0.9);
+		}
+	}
+	
+}
 
+@media (max-width: 740px) {
+	section.slider_card {
+		.slider-for {
+			.img_item {
+				height: 400px;
+			}
+			.slick-slide {
+
+			}
+			.slick-slide:not(.slick-center) {
+
+			}
+		}
+		.slider-nav {
+
+			.img_item {
+
+			}
+			.slick-slide {
+
+			}
+			.slick-slide.slick-center {
+
+			}
+			.slick-slide:not(.slick-center) {
+
+			}
+		}
+	}
+}
+@media (max-width: 550px) {
+	section.slider_card {
+		.slider-for {
+			.img_item {
+				height: 300px;
+			}
+			.slick-slide {
+
+			}
+			.slick-slide:not(.slick-center) {
+
+			}
+		}
+		.slider-nav {
+
+			.img_item {
+
+			}
+			.slick-slide {
+
+			}
+			.slick-slide.slick-center {
+
+			}
+			.slick-slide:not(.slick-center) {
+
+			}
+		}
+	}
+}
+@media (max-width: 400px) {
+	section.slider_card {
+		.slider-for {
+			.img_item {
+				height: 200x;
+			}
+			.slick-slide {
+
+			}
+			.slick-slide:not(.slick-center) {
+
+			}
+		}
+		.slider-nav {
+
+			.img_item {
+				height: 100px;
+			}
+			.slick-slide {
+
+			}
+			.slick-slide.slick-center {
+
+			}
+			.slick-slide:not(.slick-center) {
+
+			}
+		}
+	}
+}
+
+section.sliderDescription {
+	.wr {
+		padding: 10px 45px 20px;
+	}
+}
+section.card_components {
+	.wr {
+		.components {
+			.components_item {
+				.name {
+					font-size: 24px;
+				}
+				.images {
+					margin-top: 10px;
+					display: flex;
+					.images_item {
+						width: 180px;
+						margin: 15px 10px;
+						height: 118px;
+						background-size: contain;
+						//border: 2px solid $main_gold;
+						background-position: center;
+						background-repeat: no-repeat;
+						position: relative;
+						&:before {
+							position: absolute;
+							content:attr(data-articul);
+							line-height: 30px;
+							text-align: center;
+							color: white;
+							display: block;
+							top: 50%;
+							left: 10px;
+							right: 10px;
+							transform: translateY(-50%) scale(0);
+							padding: 0 5px;
+							height: 30px;
+							background-color: transparentize($main_red, 0.2);
+							font-size: 14px;
+							transition: 0.3s ease-in-out;
+						}
+						&:hover:before {
+							transform: translateY(-50%) scale(1);
+						}
+					}
+					
+				}
+			}
+		}
+	}
+}
 
 /*  */
 

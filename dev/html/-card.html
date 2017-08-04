@@ -1,0 +1,208 @@
+<!--#insert file="html/-top.html"-->
+
+<section class="bread">
+	<div class="wr">
+		<ol class="breadcrumb">
+			<li><a href="#">Гостинная</a></li>
+			<li><a href="#">Кухни</a></li>
+			<li><a href="#">Классические</a></li>
+			<li class="active">Siena</li>
+		</ol>
+	</div>
+</section>
+
+<section class="slider_card">
+
+	<div class="slider slider-for">
+
+		<div class="img_item" data-lightbox="img/Kitchens-1.jpg" style="background-image: url(img/Kitchens-1.jpg);"></div>
+		<div class="img_item" data-lightbox="img/Kitchens-2.jpg" style="background-image: url(img/Kitchens-2.jpg);"></div>
+		<div class="img_item" data-lightbox="img/Kitchens-3.jpg" style="background-image: url(img/Kitchens-3.jpg);"></div>
+		<div class="img_item" data-lightbox="img/Kitchens-4.jpg" style="background-image: url(img/Kitchens-4.jpg);"></div>
+		<div class="img_item" data-lightbox="img/Kitchens-5.jpg" style="background-image: url(img/Kitchens-5.jpg);"></div>
+		<div class="img_item" data-lightbox="img/Kitchens-6.jpg" style="background-image: url(img/Kitchens-6.jpg);"></div>
+		<div class="img_item" data-lightbox="img/Kitchens-7.jpg" style="background-image: url(img/Kitchens-7.jpg);"></div>
+		<div class="img_item" data-lightbox="img/Kitchens-8.jpg" style="background-image: url(img/Kitchens-8.jpg);"></div>
+		<div class="img_item" data-lightbox="img/Kitchens-9.jpg" style="background-image: url(img/Kitchens-9.jpg);"></div>
+		<div class="img_item" data-lightbox="img/Kitchens-10.jpg" style="background-image: url(img/Kitchens-10.jpg);"></div>
+		<div class="img_item" data-lightbox="img/Kitchens-11.jpg" style="background-image: url(img/Kitchens-11.jpg);"></div>
+		<div class="img_item" data-lightbox="img/Kitchens-12.jpg" style="background-image: url(img/Kitchens-12.jpg);"></div>
+		<div class="img_item" data-lightbox="img/Kitchens-13.jpg" style="background-image: url(img/Kitchens-13.jpg);"></div>
+		<div class="img_item" data-lightbox="img/Kitchens-14.jpg" style="background-image: url(img/Kitchens-14.jpg);"></div>
+		<div class="img_item" data-lightbox="img/Kitchens-15.jpg" style="background-image: url(img/Kitchens-15.jpg);"></div>
+
+
+
+	</div>
+	<div class="wr">
+
+		<div class="slider slider-nav">
+			<div class="img_item" style="background-image: url(img/Kitchens-1.jpg);"></div>
+			<div class="img_item" style="background-image: url(img/Kitchens-2.jpg);"></div>
+			<div class="img_item" style="background-image: url(img/Kitchens-3.jpg);"></div>
+			<div class="img_item" style="background-image: url(img/Kitchens-4.jpg);"></div>
+			<div class="img_item" style="background-image: url(img/Kitchens-5.jpg);"></div>
+			<div class="img_item" style="background-image: url(img/Kitchens-6.jpg);"></div>
+			<div class="img_item" style="background-image: url(img/Kitchens-7.jpg);"></div>
+			<div class="img_item" style="background-image: url(img/Kitchens-8.jpg);"></div>
+			<div class="img_item" style="background-image: url(img/Kitchens-9.jpg);"></div>
+			<div class="img_item" style="background-image: url(img/Kitchens-10.jpg);"></div>
+			<div class="img_item" style="background-image: url(img/Kitchens-11.jpg);"></div>
+			<div class="img_item" style="background-image: url(img/Kitchens-12.jpg);"></div>
+			<div class="img_item" style="background-image: url(img/Kitchens-13.jpg);"></div>
+			<div class="img_item" style="background-image: url(img/Kitchens-14.jpg);"></div>
+			<div class="img_item" style="background-image: url(img/Kitchens-15.jpg);"></div>
+
+		</div>
+	</div>
+</section>
+<script>
+	$('.slider-for').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		fade: false,
+		asNavFor: '.slider-nav',
+		centerMode: true,
+		centerPadding: '15%',
+		speed: 1000,
+		autoplay: true,
+		autoplaySpeed: 3000,
+		responsive: [{
+				breakpoint: 1100,
+				settings: {
+					centerPadding: '0',
+				}
+			},
+			{
+				breakpoint: 480,
+				settings: {
+					centerPadding: '0',
+				}
+			}
+		]
+	});
+	$('.slider-nav').slick({
+		slidesToShow: 5,
+		slidesToScroll: 1,
+		asNavFor: '.slider-for',
+		dots: false,
+		centerMode: false,
+		focusOnSelect: true,
+		centerMode: true,
+		centerPadding: '0px',
+		responsive: [{
+				breakpoint: 1100,
+				settings: {
+					slidesToShow: 3,
+				}
+			},
+			{
+				breakpoint: 580,
+				settings: {
+					slidesToShow: 1,
+					centerPadding: '25%',
+				}
+			}
+		]
+	});
+
+	$('.slider-for').slickLightbox({
+		src: 'data-lightbox',
+		itemSelector: '.img_item',
+
+	});
+
+</script>
+<section class="sliderDescription">
+	<div class="wr">
+		<p>Кухня Siena завораживает своей особенной красотой, в которой чувствуются элементы «мягкой» роскоши. Необычные ручки на фасадах напоминают удивительные работы Антонио Гауди – известного испанского архитектора и дизайнера, а благодаря декоративным деревянным узорам, витиеватым линиям и изысканным орнаментам Siena создает уникальную атмосферу сказки, способную зарядить праздничным настроением на весь год! При этом за счет цветового решения и дизайна Siena наполняет помещение комфортом, принося покой и расслабление.</p>
+	</div>
+</section>
+
+<section class="card_components">
+	<div class="wr">
+		<div class="colll components">
+			<div class="components_item">
+				<div class="name after_figure">Фасады</div>
+				<div class="images">
+					<div class="images_item" data-articul="bn-125-44" style="background-image: url(img/Facades1.jpg)"></div>
+					<div class="images_item" data-articul="sa-121-15" style="background-image: url(img/Facades2.jpg)"></div>
+					<div class="images_item" data-articul="ds-415-48" style="background-image: url(img/Facades3.jpg)"></div>
+					<div class="images_item" data-articul="aa-133-46" style="background-image: url(img/Facades4.jpg)"></div>
+					<div class="images_item" data-articul="we-155-96" style="background-image: url(img/Facades5.jpg)"></div>
+					<div class="images_item" data-articul="df-149-77" style="background-image: url(img/Facades6.jpg)"></div>
+					<div class="images_item" data-articul="qq-111-33" style="background-image: url(img/Facades7.jpg)"></div>
+				</div>
+			</div>
+			<div class="components_item">
+				<div class="name after_figure">Ручки</div>
+				<div class="images">
+					<div class="images_item" data-articul="jh-155-47" style="background-image: url(img/pens2.jpg)"></div>
+					<div class="images_item" data-articul="kj-255-66" style="background-image: url(img/pens1.jpg)"></div>
+				</div>
+			</div>
+		</div>
+		<form class="colll form_calculate_form"></form>
+	</div>
+</section>
+
+<!--#insert file="html/-bottom.html"-->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
