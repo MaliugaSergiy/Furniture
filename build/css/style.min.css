@@ -3069,9 +3069,6 @@ a {
 .slick-lightbox .slick-prev {
   z-index: 999; }
 
-.slick-lightbox-slick-img {
-  border: 1px solid #c39f76; }
-
 .slick-lightbox-close::before {
   font-size: 45px;
   font-weight: bold;
@@ -3103,6 +3100,14 @@ a {
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
     background-size: contain; }
+
+.slick-lightbox-slick-caption {
+  color: #FFF;
+  font-weight: bold; }
+  .slick-lightbox-slick-caption:before {
+    content: "Артикул: ";
+    font-weight: normal;
+    font-size: 14px; }
 
 /*  */
 /*  */
@@ -3981,42 +3986,175 @@ section.slider_card .slider-nav {
 section.sliderDescription .wr {
   padding: 10px 45px 20px; }
 
-section.card_components .wr .components .components_item .name {
-  font-size: 24px; }
-
-section.card_components .wr .components .components_item .images {
-  margin-top: 10px;
+section.card_components .wr {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex; }
-  section.card_components .wr .components .components_item .images .images_item {
-    width: 180px;
-    margin: 15px 10px;
-    height: 118px;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative; }
-    section.card_components .wr .components .components_item .images .images_item:before {
-      position: absolute;
-      content: attr(data-articul);
-      line-height: 30px;
-      text-align: center;
-      color: white;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+  section.card_components .wr .components {
+    -ms-flex-preferred-size: 70%;
+        flex-basis: 70%; }
+    section.card_components .wr .components .components_item {
+      margin-bottom: 30px; }
+      section.card_components .wr .components .components_item .name {
+        font-size: 24px; }
+      section.card_components .wr .components .components_item .images {
+        margin-top: 10px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: flex-start;
+        margin-left: -25px; }
+        section.card_components .wr .components .components_item .images .images_item {
+          cursor: pointer;
+          width: 180px;
+          margin: 15px 10px;
+          height: 143px;
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
+          position: relative; }
+          section.card_components .wr .components .components_item .images .images_item:before {
+            position: absolute;
+            content: attr(data-caption);
+            line-height: 30px;
+            text-align: center;
+            color: white;
+            display: block;
+            top: 50%;
+            left: 10px;
+            right: 10px;
+            -webkit-transform: translateY(-50%) scale(0);
+                    transform: translateY(-50%) scale(0);
+            padding: 0 5px;
+            height: 30px;
+            background-color: rgba(205, 0, 33, 0.8);
+            font-size: 16px;
+            transition: 0.3s ease-in-out; }
+          section.card_components .wr .components .components_item .images .images_item:hover:before {
+            -webkit-transform: translateY(-50%) scale(1);
+                    transform: translateY(-50%) scale(1); }
+          section.card_components .wr .components .components_item .images .images_item.isMobileDevice:before {
+            -webkit-transform: none;
+                    transform: none;
+            top: auto;
+            bottom: 0;
+            left: 15%;
+            right: 15%;
+            background-color: rgba(205, 0, 33, 0.5); }
+          section.card_components .wr .components .components_item .images .images_item.isMobileDevice:hover:before {
+            -webkit-transform: none;
+                    transform: none; }
+  section.card_components .wr .form_calculate_form {
+    -ms-flex-preferred-size: 30%;
+        flex-basis: 30%; }
+    section.card_components .wr .form_calculate_form label {
+      font-weight: 400;
+      color: #CD0021;
       display: block;
-      top: 50%;
-      left: 10px;
-      right: 10px;
-      -webkit-transform: translateY(-50%) scale(0);
-              transform: translateY(-50%) scale(0);
-      padding: 0 5px;
-      height: 30px;
-      background-color: rgba(205, 0, 33, 0.8);
+      margin-top: -13px;
       font-size: 14px;
-      transition: 0.3s ease-in-out; }
-    section.card_components .wr .components .components_item .images .images_item:hover:before {
-      -webkit-transform: translateY(-50%) scale(1);
-              transform: translateY(-50%) scale(1); }
+      position: absolute; }
+    section.card_components .wr .form_calculate_form .form_wrap {
+      background-color: #F2F0ED;
+      text-align: center;
+      padding: 20px 20px;
+      position: relative;
+      border: 1px solid #c39f76;
+      min-width: 320px; }
+      section.card_components .wr .form_calculate_form .form_wrap .name {
+        font-size: 24px;
+        color: #CD0021;
+        font-weight: bold; }
+      section.card_components .wr .form_calculate_form .form_wrap .descr {
+        font-size: 16px; }
+      section.card_components .wr .form_calculate_form .form_wrap .inputs_wrap {
+        margin-bottom: 50px;
+        margin-top: 15px;
+        padding: 0 30px; }
+        section.card_components .wr .form_calculate_form .form_wrap .inputs_wrap input,
+        section.card_components .wr .form_calculate_form .form_wrap .inputs_wrap textarea {
+          padding: 10px 10px;
+          margin: 10px 0;
+          border: 1px solid #c39f76;
+          width: 100%;
+          font-size: 16px;
+          color: #1E221D; }
+          section.card_components .wr .form_calculate_form .form_wrap .inputs_wrap input::-webkit-input-placeholder,
+          section.card_components .wr .form_calculate_form .form_wrap .inputs_wrap textarea::-webkit-input-placeholder {
+            color: #a6a6a6; }
+          section.card_components .wr .form_calculate_form .form_wrap .inputs_wrap input::-moz-placeholder,
+          section.card_components .wr .form_calculate_form .form_wrap .inputs_wrap textarea::-moz-placeholder {
+            color: #a6a6a6; }
+          section.card_components .wr .form_calculate_form .form_wrap .inputs_wrap input:-ms-input-placeholder,
+          section.card_components .wr .form_calculate_form .form_wrap .inputs_wrap textarea:-ms-input-placeholder {
+            color: #a6a6a6; }
+          section.card_components .wr .form_calculate_form .form_wrap .inputs_wrap input:-moz-placeholder,
+          section.card_components .wr .form_calculate_form .form_wrap .inputs_wrap textarea:-moz-placeholder {
+            color: #a6a6a6; }
+          section.card_components .wr .form_calculate_form .form_wrap .inputs_wrap input.error,
+          section.card_components .wr .form_calculate_form .form_wrap .inputs_wrap textarea.error {
+            border: 1px solid #CD0021; }
+        section.card_components .wr .form_calculate_form .form_wrap .inputs_wrap textarea {
+          height: 150px; }
+      section.card_components .wr .form_calculate_form .form_wrap button {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 50px;
+        line-height: 50px;
+        display: block;
+        width: 100%;
+        font-size: 20px;
+        text-transform: uppercase;
+        background-color: #CD0021;
+        color: #FFF;
+        border: none;
+        border-top: 1px solid #c39f76;
+        transition: 0.3s; }
+        section.card_components .wr .form_calculate_form .form_wrap button:hover {
+          background-color: #1E221D;
+          color: #FFF; }
+
+@media (max-width: 970px) {
+  section.card_components .wr {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+    section.card_components .wr .components {
+      -ms-flex-preferred-size: 100%;
+          flex-basis: 100%; }
+      section.card_components .wr .components .components_item .images .images_item {
+        margin: 10px 5px; }
+    section.card_components .wr .form_calculate_form {
+      -ms-flex-preferred-size: 100%;
+          flex-basis: 100%;
+      margin-bottom: 30px;
+      margin: 0 10% 30px; }
+      section.card_components .wr .form_calculate_form .form_wrap {
+        min-width: auto; } }
+
+@media (max-width: 400px) {
+  section.card_components .wr .components .components_item {
+    margin-left: 10%; }
+    section.card_components .wr .components .components_item .images .images_item {
+      width: 150px;
+      margin: 15px 5px;
+      height: 119px; }
+  section.card_components .wr .form_calculate_form {
+    margin: 0 3% 30px; }
+    section.card_components .wr .form_calculate_form .form_wrap .inputs_wrap {
+      margin-bottom: 30px;
+      margin-top: 5px; }
+      section.card_components .wr .form_calculate_form .form_wrap .inputs_wrap input,
+      section.card_components .wr .form_calculate_form .form_wrap .inputs_wrap textarea {
+        margin: 10px 0; } }
 
 /*  */
 /*  */
