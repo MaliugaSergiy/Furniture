@@ -75,7 +75,7 @@
 						<li><a href="">Угловые</a></li>
 					</ul>
 				</li>
-				<li><a href="">Приходие</a>
+				<li><a href="">Прихожие</a>
 					<ul>
 						<li><a href="#">Кожаные</a></li>
 						<li><a href="">Угловые</a></li>
@@ -264,7 +264,7 @@
 							<li><a href="">Угловые</a></li>
 						</ul>
 					</li>
-					<li class="itemMenu non-dr"><a href="#">Приходие</a>
+					<li class="itemMenu non-dr"><a href="#">Прихожие</a>
 						<ul class="submenu">
 							<li><a href="#">Кожаные</a></li>
 							<li><a href="">Угловые</a></li>
@@ -514,7 +514,7 @@
 			<div class="components_item">
 				<div class="name after_figure">Фасады</div>
 				<div class="images">
-					<div class="images_item" data-lightbox="img/Facades1.jpg" data-caption="bn-125-44" style="background-image: url(img/Facades1.jpg)"></div>
+                    <div class="images_item" data-lightbox="img/Facades1.jpg" data-caption="bn-125-44" style="background-image: url(img/Facades1.jpg)"></div>
 					<div class="images_item" data-lightbox="img/Facades2.jpg" data-caption="sa-121-15" style="background-image: url(img/Facades2.jpg)"></div>
 					<div class="images_item" data-lightbox="img/Facades3.jpg" data-caption="ds-415-48" style="background-image: url(img/Facades3.jpg)"></div>
 					<div class="images_item" data-lightbox="img/Facades4.jpg" data-caption="aa-133-46" style="background-image: url(img/Facades4.jpg)"></div>
@@ -546,6 +546,12 @@
 		</form>
 	</div>
 </section>
+<script>
+    $( document ).ready(function() {
+        $(".card_components .images_item").attr("data-toggle", "tooltip").attr("data-placement", "top").attr("title", "увеличить");
+    });
+
+</script>
 <script>
 	$('.components_item').slickLightbox({
 		src: 'data-lightbox',
