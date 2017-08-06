@@ -57,6 +57,9 @@
 
 
 		}
+        
+        //добавляем класс секции под хедером, для падинга
+        $("#underHeader").next().addClass("next_under_top");
 
 
 	})

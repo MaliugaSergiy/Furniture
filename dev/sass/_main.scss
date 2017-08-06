@@ -1,8 +1,11 @@
 section.header {
 	box-shadow: 0px 1px 8px -2px rgba(0, 0, 0, 0.75);
 	//position: sticky;
-	left: 0;
-	top: 0;
+	//left: 0;
+	//top: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
 	z-index: 4;
 	background-color: #fff;
 	.wr {
@@ -322,7 +325,7 @@ section.navPanel {
 		color: $main_white;
 		text-decoration: none;
 		padding: 10px;
-		cursor: pointer;
+        cursor: url(../icons/pointer2_1.svg), pointer;
 		-webkit-transition-duration: .3s;
 		transition-duration: .3s;
 	}
@@ -485,8 +488,22 @@ section.navPanel {
     position: relative;
 	//top: 115px;
 	z-index: 99;
+    nav ul li a, nav ul li span {
+
+        cursor: url(../icons/pointer2_2.svg), pointer;
+
+    }
+}
+#underHeader.affix {
+    top: 115px;
+    left: 0;
+    width: 100%;
+    position: fixed !important;
 }
 
+#underHeader.affix + .next_under_top {
+    padding-top: 160px;
+}
 /* -----------------PAGE - index.html------------------- */
 
 section.catalog {
@@ -1077,6 +1094,10 @@ section.card_components {
 							border: 1px solid $main_red;
 						}
 					}
+                    input:active, input:focus,
+                    textarea:active, textarea:focus{
+                        border-bottom: 1px solid $main_dark;
+                    }
 					textarea {
 						height: 150px;
 					}
@@ -1267,6 +1288,7 @@ section.categories {
 				height: 240px;
 				margin: 10px;
                 overflow: hidden;
+                cursor: url(../icons/pointer2.svg), pointer;
                 .item   {
                     width: 100%;
                     height: 100%;

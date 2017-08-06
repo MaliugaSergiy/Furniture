@@ -3253,6 +3253,9 @@ a {
 .slick-lightbox-slick-item-inner {
   cursor: url(../icons/pointer3.svg), auto; }
 
+a {
+  cursor: url(../icons/pointer2.svg), pointer; }
+
 /*  */
 /*  */
 /*  */
@@ -3439,8 +3442,9 @@ input:focus:-moz-placeholder {
 
 section.header {
   box-shadow: 0px 1px 8px -2px rgba(0, 0, 0, 0.75);
-  left: 0;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 4;
   background-color: #fff; }
   section.header .wr {
@@ -3663,7 +3667,7 @@ section.navPanel {
     color: #FFF;
     text-decoration: none;
     padding: 10px;
-    cursor: pointer;
+    cursor: url(../icons/pointer2_1.svg), pointer;
     transition-duration: .3s; }
   section.navPanel nav ul li a:hover,
   section.navPanel nav ul li span:hover {
@@ -3803,6 +3807,17 @@ section.navPanel {
   box-shadow: 0px 1px 8px -2px rgba(0, 0, 0, 0.75);
   position: relative;
   z-index: 99; }
+  #underHeader nav ul li a, #underHeader nav ul li span {
+    cursor: url(../icons/pointer2_2.svg), pointer; }
+
+#underHeader.affix {
+  top: 115px;
+  left: 0;
+  width: 100%;
+  position: fixed !important; }
+
+#underHeader.affix + .next_under_top {
+  padding-top: 160px; }
 
 /* -----------------PAGE - index.html------------------- */
 section.catalog .wr {
@@ -4243,6 +4258,9 @@ section.card_components .wr {
           section.card_components .wr .form_calculate_form .form_wrap .inputs_wrap input.error,
           section.card_components .wr .form_calculate_form .form_wrap .inputs_wrap textarea.error {
             border: 1px solid #CD0021; }
+        section.card_components .wr .form_calculate_form .form_wrap .inputs_wrap input:active, section.card_components .wr .form_calculate_form .form_wrap .inputs_wrap input:focus,
+        section.card_components .wr .form_calculate_form .form_wrap .inputs_wrap textarea:active, section.card_components .wr .form_calculate_form .form_wrap .inputs_wrap textarea:focus {
+          border-bottom: 1px solid #1E221D; }
         section.card_components .wr .form_calculate_form .form_wrap .inputs_wrap textarea {
           height: 150px; }
       section.card_components .wr .form_calculate_form .form_wrap button {
@@ -4343,7 +4361,8 @@ section.categories .wr {
           flex-basis: 30%;
       height: 240px;
       margin: 10px;
-      overflow: hidden; }
+      overflow: hidden;
+      cursor: url(../icons/pointer2.svg), pointer; }
       section.categories .wr .items_wrap a .item {
         width: 100%;
         height: 100%;
