@@ -35,6 +35,11 @@
 
 		});
 
+
+
+
+
+
 		var API = $("#my-menu").data("mmenu");
 		$(window).on("resize", function () {
 			API.close();
@@ -55,11 +60,67 @@
 		if (isMobile) {
 			$(".card_components .images_item").addClass("isMobileDevice");
 
+		}
+
+
+
+
+		//добавляем класс секции под хедером, для падинга
+		//$("#underHeader").next().addClass("next_under_top");
+
+		$(window).on("resize", setPaddingTopToHeader);
+
+
+		var aboveHeader = document.querySelector("#aboveHeader").offsetHeight;
+		console.log(aboveHeader);
+
+		$("section.header, section#underHeader").affix({
+			offset: {
+				top: aboveHeader
+			}
+		});
+
+		function setPaddingTopToHeader() {
+			$("section.header, section#underHeader").on('affix.bs.affix', function () {
+				var headerHight = document.querySelector("section.header").offsetHeight,
+					underheaderHight = document.querySelector("section#underHeader").offsetHeight;
+				$("#underHeader").next().addClass("next_under_top");
+				$(".next_under_top").css("padding-top", headerHight + underheaderHight);
+
+			});
+
+			$("section.header, section#underHeader").on('affix-top.bs.affix', function () {
+				$(".next_under_top").css("padding-top", "");
+
+			});
 
 		}
-        
-        //добавляем класс секции под хедером, для падинга
-        $("#underHeader").next().addClass("next_under_top");
+		setPaddingTopToHeader();
+
+
+
+
+
+
+		//set padding-top to part of page under header
+
+		function setPadding_top_to_site() {
+			var partUnderHeader = $("#underHeader.affix + .next_under_top"),
+				headerHight = document.querySelector("section.header").offsetHeight,
+				headerHight = document.querySelector("section#underHeader").offsetHeight;
+			if (partUnderHeader.length) {
+				//partUnderHeader.css("padding-top", headerHight + headerHight);
+			}
+			console.log(partUnderHeader);
+
+
+		}
+
+		
+		//$("section.categories .items_wrap").css("margin-top", -document.querySelector("section.categories .aside_block").offsetHeight);
+		
+		//console.log(document.querySelector("section.categories .aside_block").offsetHeight)
+
 
 
 	})

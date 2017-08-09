@@ -191,8 +191,8 @@ a {
 	display: inline-block;
 	&:after {
 		content: "";
-		width: 115%;
-		height: 8px;
+		width: 100%;
+		height: 10px;
 		display: block;
 		position: absolute;
 		background-image: url(../icons/figure.png);
@@ -200,7 +200,7 @@ a {
 		left: 50%;
 		bottom: -10px;
 		transform: translateX(-50%);
-		background-size: contain;
+		background-size: 100% 10px;
 	}
 }
 
@@ -384,6 +384,28 @@ a {
 }
 
 
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+::-webkit-scrollbar:vertical {
+    width: 12px;
+}
+
+::-webkit-scrollbar:horizontal {
+    height: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $main_gold;
+    border-radius: 0px;
+    border: 2px solid $main_gold;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 0px;  
+    background-color: $main_formBack; 
+}
 
 
 /*  */
