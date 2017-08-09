@@ -65,62 +65,114 @@
 
 
 
-		//добавляем класс секции под хедером, для падинга
-		//$("#underHeader").next().addClass("next_under_top");
-
-		$(window).on("resize", setPaddingTopToHeader);
+		/*
 
 
-		var aboveHeader = document.querySelector("#aboveHeader").offsetHeight;
-		console.log(aboveHeader);
+				//добавляем класс секции под хедером, для падинга
+				//$("#underHeader").next().addClass("next_under_top");
 
-		$("section.header, section#underHeader").affix({
-			offset: {
-				top: aboveHeader
-			}
-		});
-
-		function setPaddingTopToHeader() {
-			$("section.header, section#underHeader").on('affix.bs.affix', function () {
-				var headerHight = document.querySelector("section.header").offsetHeight,
-					underheaderHight = document.querySelector("section#underHeader").offsetHeight;
-				$("#underHeader").next().addClass("next_under_top");
-				$(".next_under_top").css("padding-top", headerHight + underheaderHight);
-
-			});
-
-			$("section.header, section#underHeader").on('affix-top.bs.affix', function () {
-				$(".next_under_top").css("padding-top", "");
-
-			});
-
-		}
-		setPaddingTopToHeader();
+				$(window).on("resize", setPaddingTopToHeader);
 
 
+				var aboveHeader = document.querySelector("#aboveHeader").offsetHeight;
+				console.log(aboveHeader);
+
+				$("section.header, section#underHeader").affix({
+					offset: {
+						top: aboveHeader
+					}
+				});
+
+				function setPaddingTopToHeader() {
+					$("section.header, section#underHeader").on('affix.bs.affix', function () {
+						var headerHight = document.querySelector("section.header").offsetHeight,
+							underheaderHight = document.querySelector("section#underHeader").offsetHeight;
+						$("#underHeader").next().addClass("next_under_top");
+						$(".next_under_top").css("padding-top", headerHight + underheaderHight);
+
+					});
+
+					$("section.header, section#underHeader").on('affix-top.bs.affix', function () {
+						$(".next_under_top").css("padding-top", "");
+
+					});
+
+				}
+				setPaddingTopToHeader();
 
 
 
 
-		//set padding-top to part of page under header
-
-		function setPadding_top_to_site() {
-			var partUnderHeader = $("#underHeader.affix + .next_under_top"),
-				headerHight = document.querySelector("section.header").offsetHeight,
-				headerHight = document.querySelector("section#underHeader").offsetHeight;
-			if (partUnderHeader.length) {
-				//partUnderHeader.css("padding-top", headerHight + headerHight);
-			}
-			console.log(partUnderHeader);
 
 
-		}
+				//set padding-top to part of page under header
+
+				function setPadding_top_to_site() {
+					var partUnderHeader = $("#underHeader.affix + .next_under_top"),
+						headerHight = document.querySelector("section.header").offsetHeight,
+						headerHight = document.querySelector("section#underHeader").offsetHeight;
+					if (partUnderHeader.length) {
+						//partUnderHeader.css("padding-top", headerHight + headerHight);
+					}
+					console.log(partUnderHeader);
+
+
+				}
+
+				
+				//$("section.categories .items_wrap").css("margin-top", -document.querySelector("section.categories .aside_block").offsetHeight);
+				
+				//console.log(document.querySelector("section.categories .aside_block").offsetHeight)
+
+		*/
 
 		
-		//$("section.categories .items_wrap").css("margin-top", -document.querySelector("section.categories .aside_block").offsetHeight);
-		
-		//console.log(document.querySelector("section.categories .aside_block").offsetHeight)
 
 
+	});
 
-	})
+$(document).ready(function() {
+	$(window).resize(setBodyPadding)
+	function setBodyPadding(){
+		let headerHeight = $(".wrapp_main_header").height();
+		console.log(headerHeight);
+		$("body").css("padding-top", headerHeight)
+	}
+	 setBodyPadding();
+      
+});
+
+
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
