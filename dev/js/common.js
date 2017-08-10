@@ -9,17 +9,16 @@
 				"shadow-page",
 				//"popup"
 			],
+			navbar: {
+				//title: '<img  alt="Мебельный салон Элит" src="icons/logo.png">'	
+				title: '<div class="menu-logoo"></div>'	
+			},
 			"offCanvas": {
 				"position": "left",
 				//"zposition": "front"
 			},
 			"counters": true,
-			"navbars": [{
-					"position": "top",
-					"content": [
-						//"searchfield"
-					]
-				},
+			"navbars": [
 				{
 					"position": "top"
 				},
@@ -33,7 +32,7 @@
 				}
 			]
 
-		});
+		}).show();
 
 
 
@@ -129,20 +128,21 @@
 	});
 
 	$(document).ready(function () {
-		$(window).resize(setBodyPadding)
+		$(window).resize(setBodyPadding);
+		
 
 		function setBodyPadding() {
 			let headerHeight = $(".wrapp_main_header").height();
 
-			$("body").css("padding-top", headerHeight)
+			$("body").css("padding-top", headerHeight);
 		}
 		setBodyPadding();
 
 		$(window).scroll(function () {
-			let aboveHeaderHeight =  $("#aboveHeader").height();
-			
+			let aboveHeaderHeight = $("#aboveHeader").height();
+
 			if ($(window).scrollTop() > aboveHeaderHeight) {
-				$(".wrapp_main_header").css("top", - aboveHeaderHeight);
+				$(".wrapp_main_header").css("top", -aboveHeaderHeight);
 				$("section.header").addClass("scrolled");
 			} else {
 				$(".wrapp_main_header").css("top", 0);
