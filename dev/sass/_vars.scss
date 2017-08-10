@@ -94,6 +94,8 @@ $main_formBack: #F2F0ED;
 
 body {
 	color: $darkGrey;
+	overflow-x: hidden;
+	
 }
 
 $grradientCertificates: linear-gradient(135deg, $darkBlue 0%, $darkBlue 25%, $white 25%, $white 26%, $darkBlue 26%, $darkBlue 50%, $white 50%, $white 51%, $darkBlue 51%, $darkBlue 75%, $white 75%, $white 76%, $darkBlue 76%, $darkBlue 100%);

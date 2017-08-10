@@ -11,7 +11,7 @@
 			],
 			navbar: {
 				//title: '<img  alt="Мебельный салон Элит" src="icons/logo.png">'	
-				title: '<div class="menu-logoo"></div>'	
+				title: '<div class="menu-logoo"></div>'
 			},
 			"offCanvas": {
 				"position": "left",
@@ -36,10 +36,19 @@
 
 
 
-		var API = $("#my-menu").data("mmenu");
+		var api = $("#my-menu").data("mmenu");
 		$(window).on("resize", function () {
-			API.close();
+			api.close();
 		});
+
+		api.bind("open:finish", function () {
+			$(".hamburger").addClass("is-active");
+		});
+		
+		api.bind("close:finish", function () {
+			$(".hamburger").removeClass("is-active");
+		});
+
 
 
 		$('[data-toggle="tooltip"]').tooltip();
@@ -129,7 +138,7 @@
 
 	$(document).ready(function () {
 		$(window).resize(setBodyPadding);
-		
+
 
 		function setBodyPadding() {
 			let headerHeight = $(".wrapp_main_header").height();
