@@ -7,7 +7,43 @@ body {
 	top: 0;
 	width: 100%;
 	z-index: 999;
+	transition: 0.3s;
 }
+
+// --------------------- mmenu-style ----------------
+.mm-menu {
+	color: $main_dark;
+	background-color: $main_formBack;
+	border-color: $main_gold;
+}
+.mm-listview > li:not(.mm-divider):after {
+	border-color: $main_gold;
+}
+.mm-listview > li, .mm-listview > li .mm-next, .mm-listview > li .mm-next:before, .mm-listview > li:after {
+	border-color: $main_gold;
+}
+.mm-listview > li > a, .mm-listview > li > span {
+	padding: 15px 10px 15px 20px;
+
+    font-size: 18px;
+}
+.footer-link {
+	display: inline-flex !important;
+	flex-direction: column-reverse;
+	border: 1px solid $main_gold;
+	color: $main_red;
+	i {
+		margin-top: 5px;
+		color: $main_red;
+	}
+	span {
+		color: $main_red;
+	}
+}
+
+
+
+// --------------------- mmenu-style ----------------
 section.header {
 	box-shadow: 0px 1px 8px -2px rgba(0, 0, 0, 0.75);
 	//position: sticky;
@@ -18,11 +54,15 @@ section.header {
 	width: 100%;
 	z-index: 4;
 	background-color: #fff;
+	&.scrolled .wr {
+		padding: 5px ;
+	}
 	.wr {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		padding: 20px 10px;
+		transition: 0.3s;
 		.burger {
 			display: none;
 			font-size: 24px;
@@ -311,6 +351,7 @@ section.header {
 	}
 }
 
+
 section.navPanel {
 	.wr {
 		padding: 0;
@@ -398,6 +439,7 @@ section.navPanel {
 			height: 0;
 			opacity: 0;
 			visibility: hidden;
+			display: none;
 			position: absolute;
 			text-align: left;
 			transition-duration: .3s;
@@ -419,6 +461,7 @@ section.navPanel {
 		&:hover .submenu {
 			opacity: 1;
 			visibility: visible;
+			display: flex;
 			height: auto;
 			border-top: 3px solid $main_dark;
 		}
@@ -489,31 +532,21 @@ section.navPanel {
 	section.navPanel,
 	#aboveHeader {
 		display: none;
+		height: 0;
 	}
 }
 
 #underHeader {
 	box-shadow: 0px 1px 8px -2px rgba(0, 0, 0, 0.75);
-	//position: sticky;
 	position: relative;
-	//top: 115px;
 	z-index: 99;
+	max-height: 46px;
 	nav ul li a,
 	nav ul li span {
 		cursor: url(../icons/pointer2_2.svg), pointer;
 	}
 }
 
-#underHeader.affix {
-	top: 115px;
-	left: 0;
-	width: 100%;
-	position: fixed !important;
-}
-
-#underHeader.affix+.next_under_top {
-	//padding-top: 160px;
-}
 
 
 /* -----------------PAGE - index.html------------------- */

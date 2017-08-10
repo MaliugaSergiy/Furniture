@@ -17,7 +17,7 @@
 			"navbars": [{
 					"position": "top",
 					"content": [
-						"searchfield"
+						//"searchfield"
 					]
 				},
 				{
@@ -26,17 +26,14 @@
 				{
 					"position": "bottom",
 					"content": [
-						"<a class='fa fa-envelope' href='#/'></a>",
-						"<a class='fa fa-twitter' href='#/'></a>",
-						"<a class='fa fa-facebook' href='#/'></a>"
+						"<a class='footer-link' href='tel:+380509087934'><i class='fa fa-phone' aria-hidden='true'></i><span>Киев</span></a>",
+						"<a class='footer-link' href='tel:+380989437199'><i class='fa fa-phone' aria-hidden='true'></i><span>Волноваха</span></a>"
+
 					]
 				}
 			]
 
 		});
-
-
-
 
 
 
@@ -126,21 +123,34 @@
 
 		*/
 
-		
+
 
 
 	});
 
-$(document).ready(function() {
-	$(window).resize(setBodyPadding)
-	function setBodyPadding(){
-		let headerHeight = $(".wrapp_main_header").height();
-		console.log(headerHeight);
-		$("body").css("padding-top", headerHeight)
-	}
-	 setBodyPadding();
-      
-});
+	$(document).ready(function () {
+		$(window).resize(setBodyPadding)
+
+		function setBodyPadding() {
+			let headerHeight = $(".wrapp_main_header").height();
+
+			$("body").css("padding-top", headerHeight)
+		}
+		setBodyPadding();
+
+		$(window).scroll(function () {
+			let aboveHeaderHeight =  $("#aboveHeader").height();
+			
+			if ($(window).scrollTop() > aboveHeaderHeight) {
+				$(".wrapp_main_header").css("top", - aboveHeaderHeight);
+				$("section.header").addClass("scrolled");
+			} else {
+				$(".wrapp_main_header").css("top", 0);
+				$("section.header").removeClass("scrolled");
+			}
+		})
+
+	});
 
 
 	/**/

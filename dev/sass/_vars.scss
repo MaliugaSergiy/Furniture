@@ -407,7 +407,10 @@ a {
     background-color: $main_formBack; 
 }
 
-
+#mm-blocker {
+	z-index: 999;
+	cursor: pointer;
+}
 /*  */
 
 

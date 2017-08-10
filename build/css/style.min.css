@@ -3274,6 +3274,10 @@ a {
   border-radius: 0px;
   background-color: #F2F0ED; }
 
+#mm-blocker {
+  z-index: 999;
+  cursor: pointer; }
+
 /*  */
 /*  */
 /*  */
@@ -3463,7 +3467,39 @@ input:focus:-moz-placeholder {
   left: 0;
   top: 0;
   width: 100%;
-  z-index: 999; }
+  z-index: 999;
+  transition: 0.3s; }
+
+.mm-menu {
+  color: #1E221D;
+  background-color: #F2F0ED;
+  border-color: #C39F76; }
+
+.mm-listview > li:not(.mm-divider):after {
+  border-color: #C39F76; }
+
+.mm-listview > li, .mm-listview > li .mm-next, .mm-listview > li .mm-next:before, .mm-listview > li:after {
+  border-color: #C39F76; }
+
+.mm-listview > li > a, .mm-listview > li > span {
+  padding: 15px 10px 15px 20px;
+  font-size: 18px; }
+
+.footer-link {
+  display: -webkit-inline-box !important;
+  display: -ms-inline-flexbox !important;
+  display: inline-flex !important;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  border: 1px solid #C39F76;
+  color: #CD0021; }
+  .footer-link i {
+    margin-top: 5px;
+    color: #CD0021; }
+  .footer-link span {
+    color: #CD0021; }
 
 section.header {
   box-shadow: 0px 1px 8px -2px rgba(0, 0, 0, 0.75);
@@ -3472,6 +3508,8 @@ section.header {
   width: 100%;
   z-index: 4;
   background-color: #fff; }
+  section.header.scrolled .wr {
+    padding: 5px; }
   section.header .wr {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -3482,7 +3520,8 @@ section.header {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    padding: 20px 10px; }
+    padding: 20px 10px;
+    transition: 0.3s; }
     section.header .wr .burger {
       display: none;
       font-size: 24px; }
@@ -3745,6 +3784,7 @@ section.navPanel {
     height: 0;
     opacity: 0;
     visibility: hidden;
+    display: none;
     position: absolute;
     text-align: left;
     transition-duration: .3s;
@@ -3769,6 +3809,9 @@ section.navPanel {
   section.navPanel #nav2 .itemMenu:hover .submenu {
     opacity: 1;
     visibility: visible;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     height: auto;
     border-top: 3px solid #1E221D; }
   section.navPanel nav ul li.more span {
@@ -3826,21 +3869,17 @@ section.navPanel {
     margin-right: 10px; }
   section.navPanel,
   #aboveHeader {
-    display: none; } }
+    display: none;
+    height: 0; } }
 
 #underHeader {
   box-shadow: 0px 1px 8px -2px rgba(0, 0, 0, 0.75);
   position: relative;
-  z-index: 99; }
+  z-index: 99;
+  max-height: 46px; }
   #underHeader nav ul li a,
   #underHeader nav ul li span {
     cursor: url(../icons/pointer2_2.svg), pointer; }
-
-#underHeader.affix {
-  top: 115px;
-  left: 0;
-  width: 100%;
-  position: fixed !important; }
 
 /* -----------------PAGE - index.html------------------- */
 section.catalog .wr {

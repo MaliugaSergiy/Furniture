@@ -205,7 +205,7 @@
 
 <div class="remodal-bg">
 
-	<div class="wrapp_main_header">
+	<div class="wrapp_main_header Fixed">
 		<section class="navPanel" id="aboveHeader">
 			<div class="wr">
 
@@ -539,64 +539,67 @@
 
 
 
-	<section class="footer">
-		<div class="wr">
-			<div class="flex_wrap">
-				<div class="item">
-					<div class="name">О компании</div>
-					<ul>
-						<li><a href="#">О компании</a></li>
-						<li><a href="#">Новости</a></li>
-						<li><a href="#">Акции</a></li>
-						<li><a href="#">Карьера</a></li>
-						<li><a href="#">Контакты</a></li>
-					</ul>
-				</div>
-				<div class="item">
-					<div class="name">Помощь</div>
-					<ul>
-						<li><a href="#">Условия оплаты</a></li>
-						<li><a href="#">Условия доставки</a></li>
-						<li><a href="#">Гарантия на товар</a></li>
-						<li><a href="#">Вопрос-ответ</a></li>
-					</ul>
-				</div>
-				<div class="item">
-					<div class="name">Контакты</div>
-					<ul>
-						<li><a href="tel:+380509087934">0509087934</a>&nbsp;&nbsp; <a href="tel:+380989437199">0989437199</a></li>
-						<li><a href="mailto:info@elit.com">info@elit.com</a></li>
-						<li>с.Петропавловская Борщаговка,</li>
-						<li>ул.Львовская 1-А корп.5 оф.1.</li>
-					</ul>
-				</div>
-				<div class="item">
-					<div class="name">Контакты</div>
-					<ul>
-						<li><a href="tel:+380509087934">0509087934</a> &nbsp;&nbsp;<a href="tel:+380989437199">0989437199</a></li>
-						<li><a href="mailto:meblielit@ukr.net ">meblielit@ukr.net</a></li>
-						<li>г.Волноваха, ул.1Мая 25-А</li>
-					</ul>
-				</div>
+<section class="footer">
+	<div class="wr">
+		<div class="flex_wrap">
+			<div class="item">
+				<div class="name">О компании</div>
+				<ul>
+					<li><a href="#">О компании</a></li>
+					<li><a href="#">Новости</a></li>
+					<li><a href="#">Акции</a></li>
+					<li><a href="#">Карьера</a></li>
+					<li><a href="#">Контакты</a></li>
+				</ul>
 			</div>
+			<div class="item">
+				<div class="name">Помощь</div>
+				<ul>
+					<li><a href="#">Условия оплаты</a></li>
+					<li><a href="#">Условия доставки</a></li>
+					<li><a href="#">Гарантия на товар</a></li>
+					<li><a href="#">Вопрос-ответ</a></li>
+				</ul>
+			</div>
+			<div class="item">
+				<div class="name">Контакты</div>
+				<ul>
+					<li><a href="tel:+380509087934">0509087934</a>&nbsp;&nbsp; <a href="tel:+380989437199">0989437199</a></li>
+					<li><a href="mailto:info@elit.com">info@elit.com</a></li>
+					<li>с.Петропавловская Борщаговка,</li>
+					<li>ул.Львовская 1-А корп.5 оф.1.</li>
+				</ul>
+			</div>
+			<div class="item">
+				<div class="name">Контакты</div>
+				<ul>
+					<li><a href="tel:+380509087934">0509087934</a> &nbsp;&nbsp;<a href="tel:+380989437199">0989437199</a></li>
+					<li><a href="mailto:meblielit@ukr.net ">meblielit@ukr.net</a></li>
+					<li>г.Волноваха, ул.1Мая 25-А</li>
+				</ul>
+			</div>
+		</div>
 
+	</div>
+</section>
+<section class="underFooter">
+	<div class="wr">
+		<div class="logo item">
+			<a href="#"><img src="icons/logo_.png" alt="Мебельный салон Элит" title="Мебельный салон 'Элит'"></a>
 		</div>
-	</section>
-	<section class="underFooter">
-		<div class="wr">
-			<div class="logo item"><a href="#"><img src="icons/logo_.png" alt="Мебельный салон Элит" title="Мебельный салон 'Элит'"></a></div>
-			<div class="autor item">&copy; 2017 Все права защищены | Мебельный салон "<span>Элит</span>" </div>
-			<div class="vt_logo item"><a href="#"><img src="icons/vt_logo.png" alt='Интернет агенство "VTrende"' title='Интернет агенство "VTrende"'></a></div>
+		<div class="autor item">&copy; 2017 Все права защищены | Мебельный салон "<span>Элит</span>" </div>
+		<div class="vt_logo item">
+			<a href="#"><img src="icons/vt_logo.png" alt='Интернет агенство "VTrende"' title='Интернет агенство "VTrende"'></a>
 		</div>
-	</section>
+	</div>
+</section>
 </div>
 
 
 
 
 <script>
-	
-		$(document).ready(function() {
+	$(document).ready(function() {
 		window.addEventListener("resize", navigationResize);
 		window.addEventListener("resize", navigationResize2);
 		//window.addEventListener("resize", droppMenu);
@@ -606,6 +609,7 @@
 		//droppMenu();
 
 		function navigationResize() {
+
 			$('#nav li.more').before($('#overflow > li'));
 
 			var $navItemMore = $('#nav > li.more'),
@@ -632,6 +636,9 @@
 
 			$('#overflow').css({
 				//'left': offset
+			});
+			$('#overflow ').css({
+				"opacity": "1"
 			});
 			$('#overflow ul.submenu').css({
 				//"display": "block"
@@ -666,6 +673,9 @@
 			$('#overflow2').css({
 				//'left': offset
 			});
+			$('#overflow2 ').css({
+				//"opacity": "1"
+			});
 			$('#overflow2 ul.submenu').css({
 				//"display": "block"
 			});
@@ -681,8 +691,8 @@
 					$('ul', this).slideUp('fast');
 				});
 		}*/
-			
-		});
+
+	});
 
 </script>
 
